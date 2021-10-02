@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obsticale
   - Box
+  - StartPoint
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ public class Car : MonoBehaviour
     SceneLouder sceneLouder;
 
     private int steerValue;
+    [SerializeField] public float scoreMultiplier = 1;
 
 
     // Start is called before the first frame update
@@ -46,9 +47,25 @@ public class Car : MonoBehaviour
     {
         if (other.CompareTag("Box"))
         {
-            Debug.Log("1");
             sceneLouder.LoudMainManu();
         }
+
+        if (other.CompareTag("StartPoint"))
+        {
+            StartCoroutine(MultiplierUpping());
+        }
     }
+
+    IEnumerator MultiplierUpping()
+    {        
+        yield return new WaitForSeconds(2f);
+        scoreMultiplier += 1;
+    }
+
+    public float GetScoreMultiplie()
+    {
+        return scoreMultiplier;
+    }
+
 
 }
