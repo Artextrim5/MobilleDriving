@@ -30,12 +30,12 @@ public class ScoreHandeler : MonoBehaviour
 
     private void OnDestroy()
     {
-        int currentHighScore = PlayerPrefs.GetInt(HighScoreKey, 0);
+        int currentHighScore = PlayerPrefs.GetInt(HighScoreKey, 0);        
 
-        if (score < currentHighScore)
+        if (score > currentHighScore)
         {
             PlayerPrefs.SetInt(HighScoreKey, Mathf.FloorToInt(score));
-        }
+        }        
     }
 
 }
